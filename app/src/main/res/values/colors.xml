@@ -10,4 +10,6 @@
 
     <color name="appColor">#0D1E3B</color>
     <color name="background_color">#F7F7F7</color>
+    <color name="etColor">#9C9C9C</color>
+
 </resources>

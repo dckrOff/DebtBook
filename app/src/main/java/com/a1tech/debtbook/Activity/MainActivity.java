@@ -1,7 +1,10 @@
 package com.a1tech.debtbook.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -18,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private final String TAG = "MainActivity";
     private ImageView ivMenu, ivSearch;
+    private TextView tvAddDebtor;
     private ArrayList<Client> clientList = new ArrayList<>();
     private RecyclerView rvClients;
     private ClientAdapter clientAdapter;
@@ -37,6 +41,16 @@ public class MainActivity extends AppCompatActivity {
         ivMenu = findViewById(R.id.iv_menu);
         ivSearch = findViewById(R.id.iv_search);
         rvClients = findViewById(R.id.rv_clients);
+        tvAddDebtor = findViewById(R.id.tvAddDebtor);
+
+        tvAddDebtor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddDebtActivity.class);
+                intent.putExtra("add",0);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setData() {

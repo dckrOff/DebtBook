@@ -1,6 +1,7 @@
 package com.a1tech.debtbook.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +27,7 @@ public class AddDebtActivity extends AppCompatActivity {
     private TextView tvDDItemAmount, tvDDPrice;
     private Button btnDebtorSave, btnDebtSave;
     private ListPopupWindow mListPopupWindowAmount, mListPopupWindowPrice;
+    private ConstraintLayout addDebtor, addDebt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,21 @@ public class AddDebtActivity extends AppCompatActivity {
         setOnClicks();
         setDropDownForAmount();
         setDropDownForPrice();
+        setViewByStatus();
 
+    }
+
+    private void setViewByStatus() {
+        Bundle arguments = getIntent().getExtras();
+        int status = arguments.getInt("add");
+
+        if (status == 0) {
+            addDebt.setVisibility(View.GONE);
+            addDebtor.setVisibility(View.VISIBLE);
+        } else if (status == 1) {
+            addDebt.setVisibility(View.VISIBLE);
+            addDebtor.setVisibility(View.GONE);
+        }
     }
 
     private void init() {
@@ -53,6 +69,8 @@ public class AddDebtActivity extends AppCompatActivity {
         btnDebtSave = findViewById(R.id.btnDebtSave);
         mListPopupWindowAmount = new ListPopupWindow(this);
         mListPopupWindowPrice = new ListPopupWindow(this);
+        addDebt = findViewById(R.id.clAddDebt);
+        addDebtor = findViewById(R.id.clAddDebtor);
     }
 
     private void setOnClicks() {
@@ -60,6 +78,24 @@ public class AddDebtActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+        tvDebterPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // set intent to take photo from gallery
+            }
+        });
+        btnDebtSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        btnDebtorSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }

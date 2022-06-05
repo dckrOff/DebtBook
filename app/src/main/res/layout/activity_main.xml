@@ -61,4 +61,23 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         tools:listitem="@layout/item_client" />
 
+    // add debtor button
+    <TextView
+        android:id="@+id/tvAddDebtor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg_add_debt_btn"
+        android:paddingStart="20dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="15dp"
+        android:text="+  НОВЫЙ ДОЛГ"
+        android:textColor="@color/appColor"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

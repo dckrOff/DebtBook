@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.a1tech.debtbook.Adapter.ClientAdapter;
 import com.a1tech.debtbook.Adapter.DebtAdapter;
@@ -22,6 +24,7 @@ public class DebtActivity extends AppCompatActivity {
     private ImageView ivBack, ivSearch;
     private ArrayList<Debt> debt = new ArrayList<>();
     private RecyclerView rvDebt;
+    private TextView tvAddDebtor;
     private DebtAdapter debtAdapter;
 
     @Override
@@ -32,18 +35,33 @@ public class DebtActivity extends AppCompatActivity {
         init();
         setData();
         setAdapter();
-
+        setOnClicks();
     }
 
     private void init() {
         ivBack = findViewById(R.id.ivBack);
         ivSearch = findViewById(R.id.ivSearch);
         rvDebt = findViewById(R.id.rvDebt);
+        tvAddDebtor = findViewById(R.id.tvAddDebt);
 
+
+    }
+
+    private void setOnClicks() {
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+
+
+        tvAddDebtor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DebtActivity.this, AddDebtActivity.class);
+                intent.putExtra("add", 1);
+                startActivity(intent);
             }
         });
     }

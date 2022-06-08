@@ -10,9 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.a1tech.debtbook.Adapter.ClientAdapter;
 import com.a1tech.debtbook.Adapter.DebtAdapter;
-import com.a1tech.debtbook.Model.Client;
 import com.a1tech.debtbook.Model.Debt;
 import com.a1tech.debtbook.R;
 
@@ -39,7 +37,7 @@ public class DebtActivity extends AppCompatActivity {
     }
 
     private void init() {
-        ivBack = findViewById(R.id.ivBack);
+        ivBack = findViewById(R.id.iv_back);
         ivSearch = findViewById(R.id.ivSearch);
         rvDebt = findViewById(R.id.rvDebt);
         tvAddDebtor = findViewById(R.id.tvAddDebt);

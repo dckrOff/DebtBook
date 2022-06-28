@@ -39,7 +39,7 @@
             android:text="Отабоев Азамат"
             android:textColor="@color/appColor"
             android:textSize="18sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/rubik_medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/popBookImage" />
@@ -49,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="@font/rubik_bold"
             android:text="2 500 000 сум"
             android:textColor="@color/appColor"
             android:textSize="35sp"
@@ -73,6 +73,7 @@
             android:layout_marginTop="20dp"
             android:text="Дата задолженности"
             android:textColor="#575757"
+            android:fontFamily="@font/rubik_regular"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view" />
@@ -87,7 +88,7 @@
             android:text="04/05/2022"
             android:textColor="@color/appColor"
             android:textSize="18sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/rubik_medium"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/itemCount" />
@@ -102,9 +103,9 @@
             android:padding="15dp"
             android:paddingStart="35dp"
             android:paddingEnd="35dp"
+            android:fontFamily="@font/rubik_medium"
             android:text="ДЕТАЛИ"
             android:textColor="@color/white"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

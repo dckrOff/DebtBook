@@ -10,25 +10,25 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.a1tech.debtbook.Adapter.DebtAdapter;
+import com.a1tech.debtbook.Adapter.DebtsAdapter;
 import com.a1tech.debtbook.Model.Debt;
 import com.a1tech.debtbook.R;
 
 import java.util.ArrayList;
 
-public class DebtActivity extends AppCompatActivity {
+public class DebtsActivity extends AppCompatActivity {
 
     private final String TAG = "DebtActivity";
     private ImageView ivBack, ivSearch;
     private ArrayList<Debt> debt = new ArrayList<>();
     private RecyclerView rvDebt;
     private TextView tvAddDebtor;
-    private DebtAdapter debtAdapter;
+    private DebtsAdapter debtsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_client);
+        setContentView(R.layout.activity_debts);
 
         init();
         setData();
@@ -41,8 +41,6 @@ public class DebtActivity extends AppCompatActivity {
         ivSearch = findViewById(R.id.ivSearch);
         rvDebt = findViewById(R.id.rvDebt);
         tvAddDebtor = findViewById(R.id.tvAddDebt);
-
-
     }
 
     private void setOnClicks() {
@@ -57,7 +55,7 @@ public class DebtActivity extends AppCompatActivity {
         tvAddDebtor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DebtActivity.this, AddDebtActivity.class);
+                Intent intent = new Intent(DebtsActivity.this, AddDebtActivity.class);
                 intent.putExtra("add", 1);
                 startActivity(intent);
             }
@@ -88,7 +86,7 @@ public class DebtActivity extends AppCompatActivity {
     private void setAdapter() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
         rvDebt.setLayoutManager(linearLayoutManager);
-        debtAdapter = new DebtAdapter(this, debt);
-        rvDebt.setAdapter(debtAdapter); // set the Adapter to RecyclerView
+        debtsAdapter = new DebtsAdapter(this, debt);
+        rvDebt.setAdapter(debtsAdapter); // set the Adapter to RecyclerView
     }
 }

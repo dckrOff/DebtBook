@@ -7,11 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.a1tech.debtbook.Activity.DebtActivity;
+import com.a1tech.debtbook.Activity.DebtsActivity;
 import com.a1tech.debtbook.Model.Client;
 import com.a1tech.debtbook.R;
 
@@ -50,7 +49,7 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.MyViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), DebtActivity.class);
+                Intent intent = new Intent(view.getContext(), DebtsActivity.class);
                 view.getContext().startActivity(intent);
             }
         });

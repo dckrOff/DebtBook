@@ -17,7 +17,7 @@ import com.a1tech.debtbook.R;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class ClientsActivity extends AppCompatActivity {
 
     private final String TAG = "MainActivity";
     private ImageView ivMenu, ivSearch;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO); // off dark mode
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_clients);
 
         init();
         setData();
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         tvAddDebtor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AddDebtActivity.class);
+                Intent intent = new Intent(ClientsActivity.this, AddDebtActivity.class);
                 intent.putExtra("add",0);
                 startActivity(intent);
             }

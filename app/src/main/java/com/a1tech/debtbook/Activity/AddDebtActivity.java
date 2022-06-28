@@ -22,14 +22,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.a1tech.debtbook.R;
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -40,10 +41,9 @@ public class AddDebtActivity extends AppCompatActivity {
     private final String[] currency = {"SUM", "$", "₽"};
     private final String TAG = "AddDebtActivity";
     private ImageView ivBack, ivDebterPhoto;
-    private TextView tvDebterPhoto;
     private EditText etDebterName, etDebterPhone;
     private EditText etDebtItemName, edItemAmount, etItemPrice;
-    private TextView tvDDItemAmount, tvDDPrice, actionBarText;
+    private TextView tvDDItemAmount, tvDDPrice, actionBarText, tvDebterPhoto;
     private Button btnDebtorSave, btnDebtSave;
     private ListPopupWindow mListPopupWindowAmount, mListPopupWindowPrice;
     private ConstraintLayout addDebtor, addDebt;
@@ -207,10 +207,11 @@ public class AddDebtActivity extends AppCompatActivity {
                                 public void onSuccess(Uri uri) {
                                     urlImage = uri.toString();
 
-                                    Picasso.get()
+                                    Glide
+                                            .with(AddDebtActivity.this)
                                             .load(urlImage)
-                                            .resize(ivDebterPhoto.getMeasuredWidth(), ivDebterPhoto.getMeasuredHeight())
                                             .centerCrop()
+//                                            .placeholder(R.drawable.i) // if fail to load image
                                             .into(ivDebterPhoto);
 
                                     Log.e("URL image-> ", uri.toString());
@@ -246,14 +247,14 @@ public class AddDebtActivity extends AppCompatActivity {
             // Get the Uri of data
             filePath = data.getData();
 
-            uploadImage();
-//            try {
-//                // Setting image on image view using Bitmap
-//                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
-//                ivDebterPhoto.setImageBitmap(bitmap);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
+//            uploadImage();
+            try {
+                // Setting image on image view using Bitmap
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+                ivDebterPhoto.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 

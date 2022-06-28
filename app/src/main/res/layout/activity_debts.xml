@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".Activity.DebtActivity"
+    tools:context=".Activity.DebtsActivity"
     tools:ignore="ExtraText">
 
     // action bar
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
@@ -90,10 +91,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                android:fontFamily="@font/rubik_medium"
                 android:text="Отабоев Азамат"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/popBookImage"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -103,10 +104,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
-                android:fontFamily="sans-serif-black"
+                android:fontFamily="@font/rubik_bold"
                 android:text="2 500 000 UZS"
                 android:textColor="@color/white"
-                android:textSize="30sp"
+                android:textSize="27sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/popBookImage" />
@@ -123,15 +124,17 @@
         android:paddingEnd="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
-        tools:listitem="@layout/item_debts"/>
+        tools:listitem="@layout/item_debts" />
 
     // add debtor button
+
     <TextView
         android:id="@+id/tvAddDebt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:background="@drawable/bg_add_debt_btn"
+        android:fontFamily="@font/rubik_medium"
         android:paddingStart="20dp"
         android:paddingTop="15dp"
         android:paddingEnd="20dp"
@@ -139,7 +142,6 @@
         android:text="+  НОВЫЙ ДОЛГ"
         android:textColor="@color/appColor"
         android:textSize="12sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

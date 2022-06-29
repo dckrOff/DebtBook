@@ -54,11 +54,12 @@ public class ClientsActivity extends AppCompatActivity {
     }
 
     private void setData() {
-        clientList.add(new Client("Отабоев Азамат", 1254000, "21/05/2022"));
-        clientList.add(new Client("Авезов Рустам", 2450000, "21.05.2022"));
+        clientList.add(new Client("Отабоев Азамат", 12540000, "21/05/2022"));
+        clientList.add(new Client("Авезов Рустам", 24520000, "21.05.2022"));
         clientList.add(new Client("Отабоев Азамат", 1254000, "21-05-2022"));
         clientList.add(new Client("Авезов Рустам", 3120000, "21.05.2022"));
         clientList.add(new Client("Отабоев Азамат", 1254000, "21/05/2022"));
+        clientList.add(new Client("Отабоев Азамат", 99999999, "21/05/2022"));
     }
 
     private void setAdapter() {

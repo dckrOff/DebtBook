@@ -96,7 +96,7 @@ public class DebtsAdapter extends RecyclerView.Adapter<DebtsAdapter.MyViewHolder
         ImageView btnExit = dialog.findViewById(R.id.iv_exit);
 
         itemName.setText(name);
-        itemCount.setText(String.valueOf(count));
+        itemCount.setText(count + " шт");
         date.setText(detbDate);
         amountGoods.setText(amount + " сум");
 

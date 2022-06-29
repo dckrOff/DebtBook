@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -19,12 +19,12 @@
 
         <TextView
             android:id="@+id/tv_item_name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Гипсокартон"
+            android:fontFamily="@font/rubik_medium"
+            android:text="Шпаклёвка"
             android:textColor="@color/appColor"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,7 @@
             android:fontFamily="@font/montserrat_light"
             android:text="Количество:"
             android:textColor="@color/appColor"
-            android:textSize="18sp"
+            android:textSize="13sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_item_name" />
 
@@ -47,10 +47,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="211dp"
             android:fontFamily="@font/montserrat_light"
             android:text="Дата:"
             android:textColor="@color/appColor"
-            android:textSize="18sp"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_date"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_item_count_s" />
 
@@ -62,7 +65,9 @@
             android:fontFamily="@font/montserrat_light"
             android:text="Общая сумма:"
             android:textColor="@color/appColor"
-            android:textSize="18sp"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_amount_goods"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_date_s" />
 
@@ -74,8 +79,10 @@
             android:fontFamily="@font/montserrat_bold"
             android:text="15 шт"
             android:textColor="@color/appColor"
-            android:textSize="18sp"
+            android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_item_name" />
 
         <TextView
@@ -86,10 +93,8 @@
             android:fontFamily="@font/montserrat_bold"
             android:text="18.05.2022"
             android:textColor="@color/appColor"
-            android:textSize="18sp"
+            android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tv_date_s"
             app:layout_constraintTop_toBottomOf="@+id/tv_item_count" />
 
         <TextView
@@ -100,59 +105,58 @@
             android:fontFamily="@font/montserrat_bold"
             android:text="247 000 сум"
             android:textColor="@color/appColor"
-            android:textSize="18sp"
+            android:textSize="13sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/textView3"
             app:layout_constraintTop_toBottomOf="@+id/tv_date" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout32"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/constraintLayout2"
-        android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
         <TextView
             android:id="@+id/tv_delete"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
             android:background="@drawable/dialog_btn_delete_bg"
             android:fontFamily="@font/montserrat_semibold"
-            android:paddingStart="48dp"
-            android:paddingTop="16dp"
-            android:paddingEnd="48dp"
-            android:paddingBottom="16dp"
+            android:padding="15dp"
             android:text="  Удалить"
+            android:gravity="center"
             android:textColor="@color/white"
+            android:textSize="13sp"
             app:drawableStartCompat="@drawable/ic_delete"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_edit"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_edit"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginStart="6dp"
             android:background="@drawable/dialog_btn_edit_bg"
             android:fontFamily="@font/montserrat_semibold"
-            android:paddingStart="48dp"
-            android:paddingTop="16dp"
-            android:paddingEnd="48dp"
-            android:paddingBottom="16dp"
+            android:padding="15dp"
             android:text="  Изменить"
             android:textColor="@color/white"
+            android:textSize="13sp"
             app:drawableStartCompat="@drawable/ic_edit"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_delete"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -161,10 +165,10 @@
         android:id="@+id/iv_exit"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="7dp"
-        android:src="@drawable/ic_exit" />
+        android:layout_marginTop="-15dp"
+        android:layout_marginEnd="-15dp"
+        android:src="@drawable/ic_exit"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout2" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
